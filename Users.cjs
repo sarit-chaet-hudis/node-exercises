@@ -7,10 +7,25 @@ const createUser = function (userName, userEmail) {
   saveUsers(users);
   // return something?
 };
+
 const readUser = function (userId) {
   const users = loadUsers();
   const user = users.find((user) => user.id === userId);
   console.log(user);
+};
+
+const updateUserEmail = function (userId, newEmail) {
+  const users = loadUsers();
+  const user = users.find((user) => user.id === userId);
+  user.email = newEmail;
+  console.log(user);
+  saveUsers(users);
+};
+
+const deleteUser = function (userId) {
+  const users = loadUsers();
+  const usersAfterDelete = users.filter((user) => user.id !== userId);
+  saveUsers(usersAfterDelete);
 };
 
 const loadUsers = function () {
@@ -27,4 +42,9 @@ const saveUsers = function (users) {
   fs.writeFileSync("Users.json", data);
 };
 
-module.exports = { createUser: createUser, readUser: readUser };
+module.exports = {
+  createUser: createUser,
+  readUser: readUser,
+  updateUserEmail: updateUserEmail,
+  deleteUser: deleteUser,
+};

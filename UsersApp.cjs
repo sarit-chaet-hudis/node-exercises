@@ -42,3 +42,42 @@ yargs(hideBin(process.argv))
     },
   })
   .parse();
+
+yargs(hideBin(process.argv))
+  .command({
+    command: "updateEmail",
+    describe: "update user email based on input: user ID, new Email",
+    builder: {
+      userId: {
+        describe: "user ID",
+        demandOption: true,
+        type: "string",
+      },
+      email: {
+        describe: "new email",
+        demandOption: true,
+        type: "string",
+      },
+    },
+    handler: function (argv) {
+      userUtils.updateUserEmail(argv.userId, argv.email);
+    },
+  })
+  .parse();
+
+yargs(hideBin(process.argv))
+  .command({
+    command: "delete",
+    describe: "delete user based on input: user ID",
+    builder: {
+      userId: {
+        describe: "user ID",
+        demandOption: true,
+        type: "string",
+      },
+    },
+    handler: function (argv) {
+      userUtils.deleteUser(argv.userId);
+    },
+  })
+  .parse();
