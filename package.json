@@ -1,0 +1,20 @@
+{
+  "name": "node-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "2.1.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarit-chaet-hudis/node-exercises.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarit-chaet-hudis/node-exercises/issues"
+  },
+  "homepage": "https://github.com/sarit-chaet-hudis/node-exercises#readme"
+}
