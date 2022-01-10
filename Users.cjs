@@ -7,9 +7,10 @@ const createUser = function (userName, userEmail) {
   saveUsers(users);
   // return something?
 };
-const readUsers = function () {
+const readUser = function (userId) {
   const users = loadUsers();
-  console.log(users);
+  const user = users.find((user) => user.id === userId);
+  console.log(user);
 };
 
 const loadUsers = function () {
@@ -26,4 +27,4 @@ const saveUsers = function (users) {
   fs.writeFileSync("Users.json", data);
 };
 
-module.exports = { createUser: createUser, readUsers: readUsers };
+module.exports = { createUser: createUser, readUser: readUser };

@@ -25,3 +25,20 @@ yargs(hideBin(process.argv))
     },
   })
   .parse();
+
+yargs(hideBin(process.argv))
+  .command({
+    command: "show",
+    describe: "show user info based on input: user ID",
+    builder: {
+      userId: {
+        describe: "user ID",
+        demandOption: true,
+        type: "string",
+      },
+    },
+    handler: function (argv) {
+      userUtils.readUser(argv.userId);
+    },
+  })
+  .parse();
