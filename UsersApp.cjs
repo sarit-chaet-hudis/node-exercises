@@ -20,8 +20,8 @@ yargs(hideBin(process.argv))
         type: "string",
       },
     },
-    handler: function (argv) {
-      userUtils.createUser(argv.name, argv.email);
+    handler: function ({ name, email }) {
+      userUtils.createUser(name, email);
     },
   })
   .parse();
@@ -59,8 +59,8 @@ yargs(hideBin(process.argv))
         type: "string",
       },
     },
-    handler: function (argv) {
-      userUtils.updateUserEmail(argv.userId, argv.email);
+    handler: function ({ userId, email }) {
+      userUtils.updateUserEmail(userId, email);
     },
   })
   .parse();
