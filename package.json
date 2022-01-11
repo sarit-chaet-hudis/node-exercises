@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sarit-chaet-hudis/node-exercises#readme",
   "dependencies": {
+    "postman-request": "^2.88.1-postman.31",
     "uniqid": "^5.4.0"
   }
 }
